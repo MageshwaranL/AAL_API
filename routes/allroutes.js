@@ -2,6 +2,12 @@ const app = require("express"); //import express
 const router = app.Router();
 
 const ReportModule = require("../controllers/ReportModule");
+const branchModule = require("../controllers/BranchDepentFilter");
+
+
+
+router.get("/getstates", branchModule.getstates);
+
 
 router.post("/reports", ReportModule.reports);
 router.post("/schedule", ReportModule.schedules);

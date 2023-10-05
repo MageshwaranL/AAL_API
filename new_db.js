@@ -6,7 +6,7 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 const mysql = require('mysql');
-const morgan=require('morgan');
+const morgan = require('morgan');
 const app = express();
 const port = 4042;
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
-app.use(morgan());
+app.use(morgan('combined'));
 const routes = require("./routes/allroutes");
 
 const PORT = process.env.PORT || 4043;
